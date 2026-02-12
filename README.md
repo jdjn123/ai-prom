@@ -1,6 +1,9 @@
 # AI-Prom
 
 AI-Prom 是一个智能化的 Prometheus 监控指标分析工具。它结合了 Prometheus 监控数据、Milvus 向量数据库和 LLM（大语言模型），提供指标数据的自动摄取、异常检测、相似性搜索以及智能分析功能。
+<img width="1476" height="666" alt="image" src="https://github.com/user-attachments/assets/8cdc4ebb-d2c0-497b-9379-423f1c57c60d" />
+
+
 
 ## 主要功能
 
