@@ -1,0 +1,7 @@
+requests
+milvus-pymilvus
+fastapi
+uvicorn
+jinja2
+python-multipart
+pyyaml

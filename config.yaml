@@ -1,0 +1,42 @@
+prometheus:
+  url: "http://172.16.0.1:9090"
+  default_query: "up"
+  range_step: "60s"
+  ingest_days: 15
+
+# 主机/实例映射配置
+# key 可以是 ip:port 或 纯 ip
+hosts:
+  "127.0.0.1:9090":
+    env: "生产环境"
+    service: "Prometheus监控服务"
+  "localhost:9090":
+    env: "生产环境"
+    service: "Prometheus监控服务"
+  "172.16.0.1:9090":
+    env: "测试环境"
+    service: "订单服务"
+
+milvus:
+  host: "172.16.0.2"
+  port: 19530
+  collection_name: "metric_series"
+
+ollama:
+  host: "http://172.16.0.3:11434"
+  model: "qwen3:1.7b"
+
+alerts:
+  wecom:
+    enabled: false
+    webhook: ""
+  dingtalk:
+    enabled: true
+    webhook: "https://oapi.dingtalk.com/robot/send?access_token=*********"
+  email:
+    enabled: false
+    smtp_host: ""
+    smtp_port: 587
+    smtp_user: ""
+    smtp_pass: ""
+    mail_to: ""

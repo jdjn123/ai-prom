@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prometheus 告警预测分析</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Prometheus 告警预测分析</h1>
+    
+    <!-- Target Selection -->
+    <div class="card">
+      <h2>监控目标与指标选择</h2>
+      <div class="selection-row">
+        <div class="col">
+          <label>目标实例 (Instance)</label>
+          <select id="instance-select"><option value="">Loading...</option></select>
+        </div>
+        <div class="col">
+          <label>监控指标 (Metric)</label>
+          <select id="metric-select"><option value="up">up</option></select>
+        </div>
+      </div>
+      <div class="query-row">
+        <label>自定义 PromQL (可选)</label>
+        <input id="query" value="up">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="actions">
+        <button id="ingest">导入15天历史到Milvus</button>
+        <button id="analyze" class="primary">分析预测</button>
+        <button id="alert">推送告警</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>趋势图表</h2>
+      <canvas id="chartCanvas" width="800" height="300"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>思考过程 (Thought Process)</h2>
+      <div id="thought" class="thought-box"></div>
+    </div>
+    <div class="card">
+      <h2>分析报告</h2>
+      <div id="result" class="report-box"></div>
+    </div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
